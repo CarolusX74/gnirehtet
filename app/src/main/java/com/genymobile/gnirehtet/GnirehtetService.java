@@ -129,6 +129,13 @@ public class GnirehtetService extends VpnService {
         if (dnsServers.length == 0) {
             // no DNS server defined, use Google DNS
             builder.addDnsServer("8.8.8.8");
+
+            Log.d("klo","ADD CUSTOM DNS SERVERS");
+            builder.addDnsServer("10.0.52.1");
+            builder.addDnsServer("10.0.53.1");
+            builder.addDnsServer("10.0.52.3");
+            builder.addDnsServer("10.0.53.3");
+
         } else {
             for (InetAddress dnsServer : dnsServers) {
                 builder.addDnsServer(dnsServer);
